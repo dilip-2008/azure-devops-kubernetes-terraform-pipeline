@@ -14,35 +14,40 @@ stages:
   jobs: 
    - job: job1
      steps:
-      - script: echo Hello, world1
+      - script: echo ${Build.BuildId}
+      - script: echo ${Build.BuildNumber}
+      - script: echo ${Build.SourceVersion}
+      - script: echo ${Build.SourcesDirectory}
+      - script: echo ${Build.SourceBranchName}
+      - script: echo ${Build.ArtifactStagingDirectory}
         displayName: 'JOB1'
 
-- stage: DevDeploy
-  dependsOn: Build
-  jobs: 
-   - job: job2
-     steps:
-      - script: echo Hello, world2
-      - bash: echo $(test1)
-        displayName: 'JOB2'
+# - stage: DevDeploy
+#   dependsOn: Build
+#   jobs: 
+#    - job: job2
+#      steps:
+#       - script: echo Hello, world2
+#       - bash: echo $(test1)
+#         displayName: 'JOB2'
 
-- stage: QADeploy
-  dependsOn: Build
-  jobs: 
-   - job: job2
-     steps:
-      - script: echo Hello, world3
-        displayName: 'JOB3'
+# - stage: QADeploy
+#   dependsOn: Build
+#   jobs: 
+#    - job: job2
+#      steps:
+#       - script: echo Hello, world3
+#         displayName: 'JOB3'
 
-- stage: PRODDeploy
-  variables:
-    test2: prod
-  dependsOn: 
-  - DevDeploy
-  - QADeploy
-  jobs: 
-   - job: job2
-     steps:
-      - script: echo Hello, world4
-      - bash: echo $(test2)
-        displayName: 'JOB4'
+# - stage: PRODDeploy
+#   variables:
+#     test2: prod
+#   dependsOn: 
+#   - DevDeploy
+#   - QADeploy
+#   jobs: 
+#    - job: job2
+#      steps:
+#       - script: echo Hello, world4
+#       - bash: echo $(test2)
+#         displayName: 'JOB4'
