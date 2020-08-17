@@ -23,6 +23,7 @@ stages:
    - job: job2
      steps:
       - script: echo Hello, world2
+      - bash: echo $(test1)
         displayName: 'JOB2'
 
 - stage: QADeploy
@@ -41,4 +42,5 @@ stages:
    - job: job2
      steps:
       - script: echo Hello, world4
+      - bash: echo $(test2)
         displayName: 'JOB4'
