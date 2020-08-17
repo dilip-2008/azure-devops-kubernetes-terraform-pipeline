@@ -35,6 +35,8 @@ stages:
         displayName: 'JOB3'
 
 - stage: PRODDeploy
+  variables:
+    test2: prod
   dependsOn: 
   - DevDeploy
   - QADeploy
