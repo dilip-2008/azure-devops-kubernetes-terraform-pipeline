@@ -16,21 +16,4 @@ stages:
      steps:
       - script: echo Hello, world1
         displayName: 'JOB1'
-- stage: DevDeploy
-  dependsOn: Build
-   - job: job2
-     steps:
-      - script: echo Hello, world2
-        displayName: 'JOB2'
-- stage: QADeploy
-  dependsOn: Build
-   - job: job3
-     steps:
-      - script: echo Hello, world2
-        displayName: 'JOB3'   
-- stage: PRODDeploy
-  dependsOn: DevDeploy,QADeploy
-   - job: job4
-     steps:
-      - script: echo Hello, world2
-        displayName: 'JOB4' 
+
