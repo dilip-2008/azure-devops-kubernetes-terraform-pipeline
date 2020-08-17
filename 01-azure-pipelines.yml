@@ -24,13 +24,13 @@ stages:
         displayName: 'JOB2'
 - stage: QADeploy
   dependsOn: Build
-   - job: job2
+   - job: job3
      steps:
       - script: echo Hello, world2
-        displayName: 'JOB2'   
+        displayName: 'JOB3'   
 - stage: PRODDeploy
   dependsOn: DevDeploy,QADeploy
-   - job: job2
+   - job: job4
      steps:
       - script: echo Hello, world2
-        displayName: 'JOB2' 
+        displayName: 'JOB4' 
