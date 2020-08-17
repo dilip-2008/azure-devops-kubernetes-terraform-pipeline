@@ -14,12 +14,12 @@ stages:
   jobs: 
    - job: job1
      steps:
-      - script: echo ${Build.BuildId}
-      - script: echo ${Build.BuildNumber}
-      - script: echo ${Build.SourceVersion}
-      - script: echo ${Build.SourcesDirectory}
-      - script: echo ${Build.SourceBranchName}
-      - script: echo ${Build.ArtifactStagingDirectory}
+      - script: echo $(Build.BuildId)
+      - script: echo $(Build.BuildNumber)
+      - script: echo $(Build.SourceVersion)
+      - script: echo $(Build.SourcesDirectory)
+      - script: echo $(Build.SourceBranchName)
+      - script: echo $(Build.ArtifactStagingDirectory)
         displayName: 'JOB1'
 
 # - stage: DevDeploy
