@@ -16,9 +16,27 @@ stages:
      steps:
       - script: echo Hello, world1
         displayName: 'JOB1'
+
 - stage: DevDeploy
+  dependsOn: Build
   jobs: 
    - job: job2
      steps:
       - script: echo Hello, world2
         displayName: 'JOB2'
+
+- stage: QADeploy
+  dependsOn: Build
+  jobs: 
+   - job: job2
+     steps:
+      - script: echo Hello, world3
+        displayName: 'JOB3'
+
+- stage: PRODDeploy
+  dependsOn: Build
+  jobs: 
+   - job: job2
+     steps:
+      - script: echo Hello, world4
+        displayName: 'JOB4'
