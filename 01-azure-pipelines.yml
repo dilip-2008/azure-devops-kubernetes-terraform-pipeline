@@ -34,7 +34,7 @@ stages:
         displayName: 'JOB3'
 
 - stage: PRODDeploy
-  dependsOn: Build
+  dependsOn: DevDeploy,QADeploy
   jobs: 
    - job: job2
      steps:
