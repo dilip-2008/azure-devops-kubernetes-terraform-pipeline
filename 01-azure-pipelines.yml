@@ -11,10 +11,10 @@ pool:
 
 jobs: 
  - job: job1
-    steps:
+   steps:
     - script: echo Hello, world!
       displayName: 'JOB1'
  - job: job2
-    steps:
+   steps:
     - script: echo Hello, world!
       displayName: 'JOB2'
