@@ -17,7 +17,7 @@ stages:
       - script: echo Hello, world1
         displayName: 'JOB1'
 - stage: DevDeploy
-    jobs: 
+  jobs: 
    - job: job2
      steps:
       - script: echo Hello, world2
